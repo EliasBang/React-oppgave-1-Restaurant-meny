@@ -1,4 +1,12 @@
-export const menydata: Array<object> = [
+export interface Matrett {
+  id: number;
+  tittel: string;
+  pris: string;
+  ingredienser: string;
+  kategori: string;
+}
+
+export const menydata: Matrett[] = [
   {
     id: 1,
     tittel: "Spaghetti Bolognese",

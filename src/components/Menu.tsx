@@ -1,22 +1,16 @@
-import type { JSX } from "react/jsx-runtime";
 import { Dish } from "./Dish";
+import type { Matrett } from "../data/menydata";
 
-export const Menu = ({ menydata }) => {
+interface MenuProps {
+  menydata: Matrett[];
+}
+
+export const Menu = ({ menydata }: MenuProps) => {
   return (
     <div id="food-grid">
-      {menydata.map(
-        (
-          matrett: JSX.IntrinsicAttributes & {
-            id: number;
-            tittel: string;
-            pris: string;
-            ingredienser: string;
-            kategori: string;
-          },
-        ) => {
-          return <Dish key={matrett.id} {...matrett} />;
-        },
-      )}
+      {menydata.map((matrett: Matrett) => {
+        return <Dish key={matrett.id} {...matrett} />;
+      })}
     </div>
   );
 };

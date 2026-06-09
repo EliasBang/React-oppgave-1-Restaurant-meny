@@ -1,4 +1,6 @@
-export const Dish = ({ id, tittel, pris, ingredienser, kategori }) => {
+import type { Matrett } from "../data/menydata";
+
+export const Dish = ({ id, tittel, pris, ingredienser, kategori }: Matrett) => {
   return (
     <div className="matkort">
       <p>
